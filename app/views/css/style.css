@@ -1,0 +1,191 @@
+/* Fonts */
+/* Meetup Fonst */
+@font-face {
+  font-family: 'Tetris1';
+    src:  url('Tetris1.ttf.woff') format('woff'),
+    url('Tetris1.ttf.svg#Tetris1') format('svg'),
+    url('Tetris1.ttf.eot'),
+    url('Tetris1.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* press start Fonst */
+@font-face {
+  font-family: 'NexaBold';
+    src:  url('NexaBold.ttf.woff') format('woff'),
+    url('NexaBold.ttf.svg#NexaBold') format('svg'),
+    url('NexaBold.ttf.eot'),
+    url('NexaBold.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* animation */
+/* Title Presentation */
+@-webkit-keyframes bounceInUp {
+  0% {
+     opacity: 0;
+     -webkit-transform: translateY(2000px);
+  }
+  60% {
+     opacity: 1;
+     -webkit-transform: translateY(-30px);
+  }
+  80% {
+    opacity: .2;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceInUp {
+  0% {
+     opacity: 0;
+     color: grey;
+     transform: translateY(2000px);
+  }
+  60% {
+     opacity: 1;
+     color: white;
+     transform: translateY(-30px);
+  }
+  80% {
+    opacity: .5;
+    color: orange;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    transform: translateY(0);
+  }
+}
+
+/* Start Game */
+@-webkit-keyframes fadeOut {
+  0% {
+     opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2000px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+     opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2000px);
+  }
+}
+
+/* Version info */
+@-webkit-keyframes starting {
+  0% {
+    opacity: 0;
+  }
+  70%{
+    opacity: 0;
+  }
+  100% {
+    opacity: .6;
+  }
+}
+
+@keyframes starting {
+  0% {
+    opacity: 0;
+  }
+  70%{
+    opacity: 0;
+  }
+  100% {
+    opacity: .6;
+  }
+}
+
+/* Elements*/
+body{
+  background: #141414;
+  overflow:hidden;
+  margin: 0;
+}
+
+canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: -9999;
+}
+
+p {
+  font-family:'Tetris1';
+  margin: 0 auto;
+  color: #fff;
+  padding-top: 50px;
+  font-size: 80px;
+  text-align: center;
+  text-shadow: 0 0 5px #141414;
+  max-width: 500px;
+}
+
+
+/* Ids */
+#meetup {
+  width: 50%;
+  margin: 0 auto;
+  /*max-width: 1000px;*/
+}
+
+#text.placeholderVisible::after {
+  visibility: visible;
+}
+
+#text.placeholderContent::after {
+  content: "press enter to start";
+}
+
+#text::after {
+  content: "${branch}.${build}";
+  color: orange;
+  font-size: 20px;
+  font-family: 'NexaBold';
+  position: absolute;
+  bottom: -20px;
+  left: -2px;
+  right: -2px;
+  opacity: .6;
+  -webkit-animation: starting 10s;
+  animation: starting 10s;
+  visibility: hidden;
+}
+
+/* Class */
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.enter::after {
+  display: none;
+}
+
+.game {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
